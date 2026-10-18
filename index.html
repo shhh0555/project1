@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>ChillFlight ✈️ 渡假機票優惠搜尋</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 頂部 Hero 區塊 -->
+  <header class="hero">
+    <div class="cloud cloud-1">☁️</div>
+    <div class="cloud cloud-2">☁️</div>
+    <div class="hero-badge">🏖️ Take a break & Fly away</div>
+    <h1>找便宜機票，準備出發！</h1>
+    <p>搜出最低價，一鍵直達航空公司與比價官網</p>
+  </header>
+
+  <main class="container">
+    <!-- 搜尋卡片 -->
+    <section class="search-card">
+      <form id="search-form">
+        <div class="input-group-row">
+          <div class="input-field">
+            <label for="from-city">出發地</label>
+            <select id="from-city" required>
+              <option value="TPE" selected>台北 (TPE)</option>
+              <option value="KHH">高雄 (KHH)</option>
+              <option value="RMQ">台中 (RMQ)</option>
+            </select>
+          </div>
+          <div class="swap-icon">✈️</div>
+          <div class="input-field">
+            <label for="to-city">目的地</label>
+            <select id="to-city" required>
+              <option value="NRT">東京成田 (NRT)</option>
+              <option value="OKA" selected>沖繩 (OKA)</option>
+              <option value="BKK">曼谷 (BKK)</option>
+              <option value="DPS">峇里島 (DPS)</option>
+              <option value="DAD">峴港 (DAD)</option>
+              <option value="PQC">富國島 (PQC)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-group-row">
+          <div class="input-field">
+            <label for="depart-date">去程日期</label>
+            <input type="date" id="depart-date" required />
+          </div>
+          <div class="input-field">
+            <label for="return-date">回程日期</label>
+            <input type="date" id="return-date" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-search">🌴 搜尋即時優惠與比價</button>
+      </form>
+    </section>
+
+    <!-- 比價平台直達區 -->
+    <section id="search-results" class="results-section hidden">
+      <h2 class="section-title">🌐 即時比價平台直達</h2>
+      <div class="platform-links" id="platform-links"></div>
+    </section>
+
+    <!-- 航班清單區 (串接 Mock API) -->
+    <section class="deals-section">
+      <div class="section-header">
+        <h2>🔥 推薦度假航線</h2>
+        <span class="sub" id="result-subtitle">即時航班與官網預訂</span>
+      </div>
+      <div class="deals-grid" id="deals-container">
+        <!-- 動態渲染處 -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>🌴 ChillFlight App — 祝您旅途愉快！</p>
+    <p class="disclaimer">註：本頁面提供直達官網及平台搜尋之便，實際票價請以各航空公司官網即時結算為準。</p>
+  </footer>
+
+  <!-- 引入模擬 API 與主邏輯 -->
+  <script src="mockData.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
